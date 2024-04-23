@@ -1,0 +1,30 @@
+---
+version: '3'
+services:
+  master:
+    build:
+      context: .
+      dockerfile: ./master.dockerfile
+    working_dir: /root/DockerTest/project
+    volume:
+      -/c/repos/ansible/playbooks:/var/lib/docker/volumes/tp_storage
+      -/c/repos/ansible/config:/var/lib/docker/volumes/tp_storage
+
+    command: /bin/bash
+
+  web:
+    build:
+      context: .
+      dockerfile: ./node.Dockerfile
+
+  db:
+    build: 
+      context: .
+      dockerfile: ./node.Dockerfile
+
+  lb:
+    build: 
+      context: .
+      dockerfile: ./node.Dockerfile
+    port:
+    - 8080:80
