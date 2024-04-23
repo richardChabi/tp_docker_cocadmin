@@ -7,8 +7,7 @@ services:
       dockerfile: ./master.dockerfile
     working_dir: /root/DockerTest/project
     volume:
-      -/root/tp_storage
-      -/root/tp_storage
+      -/root/tp_storage:/root/tp_storage
 
     command: /bin/bash
 
