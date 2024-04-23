@@ -26,5 +26,5 @@ services:
     build: 
       context: .
       dockerfile: ./node.Dockerfile
-    port:
+    ports:
     - 8080:80
