@@ -7,8 +7,8 @@ services:
       dockerfile: ./master.dockerfile
     working_dir: /root/DockerTest/project
     volume:
-      -/c/repos/ansible/playbooks:/var/lib/docker/volumes/tp_storage
-      -/c/repos/ansible/config:/var/lib/docker/volumes/tp_storage
+      -/root/tp_storage
+      -/root/tp_storage
 
     command: /bin/bash
 
