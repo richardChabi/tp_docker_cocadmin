@@ -4,12 +4,13 @@ services:
   master:
     build:
       context: .
-      dockerfile: ./master.dockerfile
+      dockerfile: ./master.Dockerfile
     working_dir: /root/DockerTest/project
-    volume:
-      -/root/tp_storage:/root/tp_storage
+    volumes:
+      - /c/repos/ansible/playbooks:/root/playbooks
+      - /c/repos/ansible/config:/etc/ansible
 
-    command: /bin/bash
+    command: tail -f /dev/null
 
   web:
     build:
